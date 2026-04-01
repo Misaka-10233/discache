@@ -67,8 +67,6 @@ func (c *Cache) Get(key string) ([]byte, bool) {
 }
 
 func (c *Cache) add(key string, value []byte) {
-	c.mut.Lock()
-	defer c.mut.Unlock()
 	if ele, ok := c.cache[key]; ok {
 		c.curByte -= int64(len(ele.Value.(*entry).value))
 		c.data.MoveToBack(ele)
