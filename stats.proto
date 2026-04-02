@@ -1,0 +1,14 @@
+syntax = "proto3";
+package discache;
+
+option go_package = "./;discache";
+
+message Stats{
+    string node_id = 1;
+    string status = 2;
+    int64 cache_size = 3;
+    int32 cache_count = 4;
+    int32 request_count = 5;
+    int32 hit_count = 6;
+    int64 timestamp = 7;
+}
